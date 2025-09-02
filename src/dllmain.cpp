@@ -50,7 +50,7 @@ DWORD WINAPI MainThread(LPVOID)
         return 1;
     }
 
-    void* conoutfAddr = (void*)0x004D8CD0;
+    void* conoutfAddr = (void*)0x0; //conoutf_t function starting address
 
 
     if (MH_CreateHook(conoutfAddr, &hkConoutf, reinterpret_cast<LPVOID*>(&oConoutf)) != MH_OK) //hook kurma
@@ -88,4 +88,5 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReser
     }
     return TRUE;
 }
+
 
